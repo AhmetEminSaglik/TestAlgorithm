@@ -1,10 +1,10 @@
 package org.ahmeteminsaglik.entity.algorithm.concrete;
 
-import org.ahmeteminsaglik.API.business.abstracts.SortAlgorithmBase;
+import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 
 import java.util.List;
 
-public class InsertionSort implements SortAlgorithmBase {
+public class InsertionSort implements BaseSortAlgorithmFunction {
     @Override
     public void sort(List<String> list) {
         sortWithInsertionSort(list);

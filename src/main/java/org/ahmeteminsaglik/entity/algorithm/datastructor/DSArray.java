@@ -1,11 +1,9 @@
 package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
-import org.ahmeteminsaglik.API.business.visitor.TestRealizationVisitor;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 
 public class DSArray extends BaseDataStructorComplexityCalculation {
-
 
     private String[] selectedDataStructorType;
 
@@ -27,7 +25,11 @@ public class DSArray extends BaseDataStructorComplexityCalculation {
     }
 
     @Override
-    public void accept(TestRealizationVisitor visitor) {
-
+    public String[] getSelectedDataStructorType() {
+        return selectedDataStructorType;
     }
+
+  /*  public String[] getSelectedDataStructorType() {
+        return selectedDataStructorType;
+    }*/
 }

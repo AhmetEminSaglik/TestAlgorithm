@@ -26,5 +26,9 @@ public class DSArrayList extends BaseDataStructorComplexityCalculation {
         }
     }
 
+    @Override
+    public List<String> getSelectedDataStructorType() {
+        return selectedDataStructorType;
+    }
 
 }

@@ -11,6 +11,9 @@ public abstract class AbstractTestRealizationForComplexityCalculation implements
     protected ComplexityCalculationService complexityService = new ComplexityCalculationManagement();
     protected TestAlgorithmResult testAlgorithmResult;
 
+    protected Stopwatch stopwatch = complexityService.getStopwatch();
+    protected MemoryUsage memoryUsage = complexityService.getMemoryUsage();
+
     public AbstractTestRealizationForComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
         this.testAlgorithmResult = testAlgorithmResult;
     }

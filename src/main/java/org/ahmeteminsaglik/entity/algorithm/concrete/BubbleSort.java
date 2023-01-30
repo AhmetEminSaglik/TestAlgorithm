@@ -1,11 +1,11 @@
 package org.ahmeteminsaglik.entity.algorithm.concrete;
 
 
-import org.ahmeteminsaglik.API.business.abstracts.SortAlgorithmBase;
+import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 
 import java.util.List;
 
-public class BubbleSort implements SortAlgorithmBase {
+public class BubbleSort implements BaseSortAlgorithmFunction {
     @Override
     public void sort(List<String> list) {
         sortWithBubbleSort(list);

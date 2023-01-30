@@ -1,12 +1,12 @@
 package org.ahmeteminsaglik.entity.algorithm.concrete;
 
 
-import org.ahmeteminsaglik.API.business.abstracts.SortAlgorithmBase;
+import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class MergeSort implements SortAlgorithmBase {
+public class MergeSort implements BaseSortAlgorithmFunction {
     @Override
     public void sort(List<String> list) {
         list = sortWithMergeSort(list);
