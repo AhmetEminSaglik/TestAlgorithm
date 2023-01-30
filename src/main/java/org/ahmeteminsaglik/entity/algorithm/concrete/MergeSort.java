@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.entity.algorithm.concrete;
 
-import org.ahmeteminsaglik.entities.abstracts.SortAlgorithmBase;
+
+import org.ahmeteminsaglik.API.business.abstracts.SortAlgorithmBase;
 
 import java.util.Arrays;
 import java.util.List;

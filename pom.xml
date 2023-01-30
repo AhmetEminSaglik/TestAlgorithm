@@ -12,5 +12,37 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>test-algorithm-result</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>memory-usage</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>stopwatch</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>readable-format</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>EnumDataSN</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>sn-database-connection</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
