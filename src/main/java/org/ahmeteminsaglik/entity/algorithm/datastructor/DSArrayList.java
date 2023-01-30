@@ -7,27 +7,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DSArrayList extends BaseDataStructorComplexityCalculation {
-    private List<String> dataStructorList = new ArrayList<>();
+    private List<String> selectedDataStructorType;
 
     public DSArrayList(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
     }
 
     @Override
-    protected void realizeTestProcess() {
+    protected void initializeSelectedDataStructorType() {
+        selectedDataStructorType = new ArrayList<>();
+    }
+
+    @Override
+    protected void addValuesToDataStructorType() {
+        System.out.println("add values in DS ARRAYLIST ");
         for (String tmp : wordListString) {
-            dataStructorList.add(tmp);
+            selectedDataStructorType.add(tmp);
         }
     }
 
-//    @Override
-//    protected void prepareBeforeTest() {
-//        super.prepareBeforeTest();
-//    }
 
-
-//    @Override
-//    protected void setResultsAfterTest() {
-//        super.setResultsAfterTest();
-//    }
 }

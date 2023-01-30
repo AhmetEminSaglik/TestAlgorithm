@@ -1,8 +1,7 @@
 package org.ahmeteminsaglik.entity.algorithm.abstracts;
 
-import org.ahmeteminsaglik.API.abstracts.DBWordAPIService;
 import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComplexityCalculation;
-import org.ahmeteminsaglik.API.concretes.DatabaseConnectionSN;
+
 import org.ahmeteminsaglik.MemoryUsage;
 import org.ahmeteminsaglik.Stopwatch;
 import org.ahmeteminsaglik.TestAlgorithmResult;
@@ -12,7 +11,7 @@ import org.ahmeteminsaglik.utility.RetriveDataFromDBUtility;
 
 import java.util.List;
 
-public abstract class BaseDataStructorComplexityCalculation extends AbstractTestRealizationForComplexityCalculation {
+public abstract class BaseDataStructorComplexityCalculation extends AbstractTestRealizationForComplexityCalculation    {
     private EnumDataStructor enumDataStructor;
     private EnumWordTable wordTablePool;
     protected List<String> wordListString;
@@ -23,10 +22,17 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
         this.wordTablePool = testAlgorithmResult.getWordProcessUsedTable().getEnumTotalWordList();
     }
 
-
     @Override
     protected final void prepareBeforeTest() {
         prepareWordList();
+    }
+
+    protected abstract void addValuesToDataStructorType();
+
+    @Override
+    protected final void realizeTestProcess() {
+        initializeSelectedDataStructorType();
+        addValuesToDataStructorType();
     }
 
 
@@ -37,9 +43,11 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
         testAlgorithmResult.setComplexityConseptDataStructor(stopwatch, memoryUsage);
     }
 
+
     private final void prepareWordList() {
         wordListString = RetriveDataFromDBUtility.getWordListFromDatabaseInStringFormat(wordTablePool);
     }
 
 
+    protected abstract void initializeSelectedDataStructorType();
 }
