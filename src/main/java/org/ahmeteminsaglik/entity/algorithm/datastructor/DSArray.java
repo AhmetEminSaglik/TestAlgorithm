@@ -5,31 +5,29 @@ import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexity
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
 
-import java.util.ArrayList;
-import java.util.List;
+public class DSArray extends BaseDataStructorComplexityCalculation {
 
-public class DSArrayList extends BaseDataStructorComplexityCalculation {
-    private List<String> selectedDataStructorType;
+    private String[] selectedDataStructorType;
 
-    public DSArrayList(TestAlgorithmResult testAlgorithmResult) {
+    public DSArray(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
     }
 
     @Override
     protected void initializeSelectedDataStructorType() {
-        selectedDataStructorType = new ArrayList<>();
+        selectedDataStructorType = new String[wordListString.size()];
     }
 
     @Override
     protected void addValuesToDataStructorType() {
-        System.out.println("add values in DS ARRAYLIST ");
-        for (String tmp : wordListString) {
-            selectedDataStructorType.add(tmp);
+        System.out.println("add values in DS ARRAY ");
+        for (int i = 0; i < wordListString.size(); i++) {
+            selectedDataStructorType[i] = wordListString.get(i);
         }
     }
 
     @Override
-    public List<String> getSelectedDataStructorType() {
+    public String[] getSelectedDataStructorType() {
         return selectedDataStructorType;
     }
 
@@ -37,14 +35,10 @@ public class DSArrayList extends BaseDataStructorComplexityCalculation {
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
         baseSortAlgorithm.sort(selectedDataStructorType);
     }
-/*    private  void printList(){
-        for(String tmp : selectedDataStructorType){
-            System.out.print(tmp+", ");
-        }
-    }*/
 
     @Override
     public void visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm) {
         baseSearchAlgorithm.search(selectedDataStructorType, baseSearchAlgorithm.getWordSearchList());
     }
+
 }

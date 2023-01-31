@@ -6,6 +6,7 @@ import org.ahmeteminsaglik.enums.EnumDataStructor;
 import org.ahmeteminsaglik.enums.EnumSearchAlgorithm;
 import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
 import org.ahmeteminsaglik.enums.EnumWordTable;
+import org.ahmeteminsaglik.readableformat.ReadableFormat;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,21 +16,18 @@ public class Main {
 //        printInfo(testAlgorithmResult);
 
         testAlgorithm.test(testAlgorithmResult);
-        testAlgorithmResult = testAlgorithm.getTestResult();
-
-//        System.out.println("AFTER  TEST : ");
-//        printInfo(testAlgorithmResult);
+        printInfo(testAlgorithmResult);
     }
 
     static TestAlgorithmResult buildFakeTestAlgorithmResult() {
         SetTestResultService setResultService = new TestAlgorithmResult();
 
-        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_1_000_000, EnumWordTable.WORD_10_000);
+        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_100, EnumWordTable.WORD_50);
 
         setResultService
-                .setDataStructorProcess(EnumDataStructor.ARRAYLIST)
+                .setDataStructorProcess(EnumDataStructor.ARRAY)
 //                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
-                .setSortAlgorithmProcess(EnumSortAlgorithm.SELECTION_SORT)
+                .setSortAlgorithmProcess(EnumSortAlgorithm.INSERTION_SORT)
 //                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
                 .setSearchAlgorithmProcess(EnumSearchAlgorithm.LINEAR_SEARCH)
 //                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
@@ -39,27 +37,30 @@ public class Main {
     }
 
     static void printInfo(TestAlgorithmResult result) {
+
         System.out.println("--- Data Structor :");
         if (result.getDataStructorComplexityConcept() != null) {
 
-            System.out.println("Used Memory (KB) :"+result.getDataStructorComplexityConcept().getMemoryUsage().getUsedMemoryKB());
-            System.out.println("Elapsed Time : "+result.getDataStructorComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Used Memory (KB) :" + ReadableFormat.getStringValue(result.getDataStructorComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
+            System.out.println("Elapsed Time : " + result.getDataStructorComplexityConcept().getStopwatch().getElapsedTimeString());
         } else {
             System.out.println("getDataStructorComplexityConcept : is NULL");
         }
         System.out.println("--- Sort Algorithm  :");
         if (result.getSortAlgorithmComplexityConcept() != null) {
 
-            System.out.println("Used Memory (KB) :"+result.getSortAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
-            System.out.println("Elapsed Time : "+result.getSortAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Used Memory (KB) :" + ReadableFormat.getStringValue(result.getSortAlgorithmComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
+            System.out.println("Elapsed Time : " + result.getSortAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
         } else {
             System.out.println("getSortAlgorithmComplexityConcept : is NULL");
         }
         System.out.println("--- Search Algorithm  :");
         if (result.getSearchAlgorithmComplexityConcept() != null) {
 
-            System.out.println("Used Memory (KB) :"+result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
-            System.out.println("Elapsed Time : "+result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Used Memory (KB) :" + result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Elapsed Time : " + result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Found word number : "+result.getWordProcessStatistic().getFoundWord());
+            System.out.println("Missing word number : "+result.getWordProcessStatistic().getMissingWord());
         } else {
             System.out.println("getSearchAlgorithmComplexityConcept : is NULL");
         }
