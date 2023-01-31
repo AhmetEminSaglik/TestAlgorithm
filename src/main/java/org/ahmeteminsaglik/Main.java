@@ -22,10 +22,10 @@ public class Main {
     static TestAlgorithmResult buildFakeTestAlgorithmResult() {
         SetTestResultService setResultService = new TestAlgorithmResult();
 
-        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_10_000, EnumWordTable.WORD_1_500);
+        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_100, EnumWordTable.WORD_50);
 
         setResultService
-                .setDataStructorProcess(EnumDataStructor.ARRAYLIST)
+                .setDataStructorProcess(EnumDataStructor.ARRAY)
 //                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
                 .setSortAlgorithmProcess(EnumSortAlgorithm.INSERTION_SORT)
 //                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())

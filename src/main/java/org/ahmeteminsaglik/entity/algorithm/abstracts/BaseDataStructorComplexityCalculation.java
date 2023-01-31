@@ -2,13 +2,15 @@ package org.ahmeteminsaglik.entity.algorithm.abstracts;
 
 import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComplexityCalculation;
 
+import org.ahmeteminsaglik.API.business.visitor.search.DataStructorSearchVisitor;
+import org.ahmeteminsaglik.API.business.visitor.sort.DataStructorSortVisitor;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.enums.EnumWordTable;
 import org.ahmeteminsaglik.utility.RetriveDataFromDBUtility;
 
 import java.util.List;
 
-public abstract class BaseDataStructorComplexityCalculation extends AbstractTestRealizationForComplexityCalculation {
+public abstract class BaseDataStructorComplexityCalculation extends AbstractTestRealizationForComplexityCalculation implements DataStructorSortVisitor, DataStructorSearchVisitor {
     //    private EnumDataStructor enumDataStructor;
     private EnumWordTable wordTablePool;
     protected List<String> wordListString;

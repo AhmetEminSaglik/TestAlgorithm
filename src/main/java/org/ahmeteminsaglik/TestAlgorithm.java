@@ -22,10 +22,12 @@ public class TestAlgorithm {
         BaseDataStructorComplexityCalculation baseDataStructor = VisitorValues.getDataStructor(testAlgorithmResult);
 //        System.out.println("baseDataStructor : " + baseDataStructor);
         BaseSortAlgorithmComplexityCalculation baseSortAlgo = VisitorValues.getSortAlgorithm(testAlgorithmResult);
-        baseSortAlgo.setDataStructorToBeSort(baseDataStructor, baseSortAlgo);
+        baseSortAlgo.setVisitorForSortProcess(baseDataStructor);
 
         BaseSearchAlgorithmComplexityCalculation baseSearchAlgo = VisitorValues.getSearchAlgorithm(testAlgorithmResult);
-        baseSearchAlgo.setDataStructorToBeSearch(baseDataStructor, baseSearchAlgo);
+        baseSearchAlgo.setVisitorForSearchProcess(baseDataStructor);
+
+
         list.add(baseDataStructor);
         list.add(baseSortAlgo);
         list.add(baseSearchAlgo);
@@ -45,7 +47,12 @@ public class TestAlgorithm {
             visitor.visit(tmp);
         }
         System.out.println("--------------------------------------------------");
-
+        System.out.println("testRealization.get(1) : " + testRealization.get(1).getClass().getSimpleName());
+        BaseSortAlgorithmComplexityCalculation sortAlgo = (BaseSortAlgorithmComplexityCalculation) testRealization.get(1);
+        System.out.println("sortAlgo : " + sortAlgo.getClass().getSimpleName());
+//        sortAlgo.
+//        DataStructorSortElement visitior = (BaseSortAlgorithmComplexityCalculation)testRealization.get(1);
+//        visitior.accept(baseDataStructor);
 
         testAlgorithmResult.getDataStructorComplexityConcept();
         testAlgorithmResult.getSortAlgorithmComplexityConcept();

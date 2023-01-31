@@ -1,7 +1,9 @@
 package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
+import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
 
 public class DSArray extends BaseDataStructorComplexityCalculation {
 
@@ -29,7 +31,14 @@ public class DSArray extends BaseDataStructorComplexityCalculation {
         return selectedDataStructorType;
     }
 
-  /*  public String[] getSelectedDataStructorType() {
-        return selectedDataStructorType;
-    }*/
+    @Override
+    public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
+        baseSortAlgorithm.sort(selectedDataStructorType);
+    }
+
+    @Override
+    public void visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm) {
+        baseSearchAlgorithm.search(selectedDataStructorType, baseSearchAlgorithm.getWordSearchList());
+    }
+
 }
