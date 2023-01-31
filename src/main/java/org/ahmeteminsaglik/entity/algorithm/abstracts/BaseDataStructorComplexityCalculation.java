@@ -13,10 +13,8 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
     private EnumWordTable wordTablePool;
     protected List<String> wordListString;
 
-    public BaseDataStructorComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
-//        this.enumDataStructor = testAlgorithmResult.getDataStructorProcess();
-        this.wordTablePool = testAlgorithmResult.getWordProcessUsedTable().getEnumTotalWordList();
+    public BaseDataStructorComplexityCalculation(EnumWordTable totalEnumWordList) {
+        this.wordTablePool = totalEnumWordList;
     }
 
     @Override
@@ -33,14 +31,10 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
         addValuesToDataStructorType();
     }
 
-
     @Override
-    protected final void setResultsAfterTest() {
-//        Stopwatch stopwatch = complexityService.getStopwatch();
-//        MemoryUsage memoryUsage = complexityService.getMemoryUsage();
+    protected void setResultsAfterTest(TestAlgorithmResult testAlgorithmResult) {
         testAlgorithmResult.setComplexityConseptDataStructor(stopwatch, memoryUsage);
     }
-
 
     private final void prepareWordList() {
         wordListString = RetriveDataFromDBUtility.getWordListFromDatabaseInStringFormat(wordTablePool);

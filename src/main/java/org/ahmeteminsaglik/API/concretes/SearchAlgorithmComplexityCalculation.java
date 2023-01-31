@@ -4,9 +4,9 @@ import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComp
 import org.ahmeteminsaglik.TestAlgorithmResult;
 
 public class SearchAlgorithmComplexityCalculation extends AbstractTestRealizationForComplexityCalculation {
-    public SearchAlgorithmComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
-    }
+//    public SearchAlgorithmComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
+//        super(testAlgorithmResult);
+//    }
 
     @Override
     public void prepareBeforeTest() {
@@ -19,7 +19,9 @@ public class SearchAlgorithmComplexityCalculation extends AbstractTestRealizatio
     }
 
     @Override
-    protected void setResultsAfterTest() {
-
+    protected void setResultsAfterTest(TestAlgorithmResult testAlgorithmResult) {
+        testAlgorithmResult.setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);
     }
+
+
 }

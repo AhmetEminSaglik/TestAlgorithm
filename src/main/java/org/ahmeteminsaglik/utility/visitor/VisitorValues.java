@@ -13,20 +13,20 @@ import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
 public class VisitorValues {
     public synchronized static BaseDataStructorComplexityCalculation getDataStructor(TestAlgorithmResult testAlgorithmResult) {
         if (EnumDataStructor.ARRAYLIST.equals(testAlgorithmResult.getDataStructorProcess())) {
-            return new DSArrayList(testAlgorithmResult);
+            return new DSArrayList(testAlgorithmResult.getWordProcessUsedTable().getEnumTotalWordList());
         }
         if (EnumDataStructor.ARRAY.equals(testAlgorithmResult.getDataStructorProcess())) {
-            return new DSArray(testAlgorithmResult);
+            return new DSArray(testAlgorithmResult.getWordProcessUsedTable().getEnumTotalWordList());
         }
         return null;
     }
 
     public synchronized static BaseSortAlgorithmComplexityCalculation getSortAlgorithm(TestAlgorithmResult testAlgorithmResult) {
         if (EnumSortAlgorithm.BUBBLE_SORT.equals(testAlgorithmResult.getSortAlgorithmProcess())) {
-            return new SABubbleSort(testAlgorithmResult);
+            return new SABubbleSort();
         }
         if (EnumSortAlgorithm.INSERTION_SORT.equals(testAlgorithmResult.getSortAlgorithmProcess()))
-            return new SAInsertionSort(testAlgorithmResult);
+            return new SAInsertionSort();
 
         System.out.println("NULLL SORT ALGORITHM");
         return null;

@@ -2,6 +2,7 @@ package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
+import org.ahmeteminsaglik.enums.EnumWordTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +10,10 @@ import java.util.List;
 public class DSArrayList extends BaseDataStructorComplexityCalculation {
     private List<String> selectedDataStructorType;
 
-    public DSArrayList(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
+    public DSArrayList(EnumWordTable totalEnumWordList) {
+        super(totalEnumWordList);
     }
+
 
     @Override
     protected void initializeSelectedDataStructorType() {

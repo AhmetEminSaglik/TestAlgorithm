@@ -10,10 +10,6 @@ import java.util.List;
 public class SABubbleSort extends BaseSortAlgorithmComplexityCalculation implements BaseSortAlgorithmFunction {
     BaseSortAlgorithmFunction baseSortAlgorithmFunction = new BubbleSort();
 
-    public SABubbleSort(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
-    }
-
 
     @Override
     public void sort(List<String> list) {

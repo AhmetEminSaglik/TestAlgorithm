@@ -1,0 +1,9 @@
+
+S
+java:S1854"8Remove this useless assignment to local variable "list".(¾§¸Æüÿÿÿÿ
+R
+java:S1854"7Remove this useless assignment to local variable "arr".(¦ éúÿÿÿÿ
+P
+java:S1854":Remove this useless assignment to local variable "sorted".(Ñ•Ú—
+t
+java:S3012("YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.( ß–Íıÿÿÿÿ

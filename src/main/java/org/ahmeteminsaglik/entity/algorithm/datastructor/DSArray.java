@@ -2,14 +2,16 @@ package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
+import org.ahmeteminsaglik.enums.EnumWordTable;
 
 public class DSArray extends BaseDataStructorComplexityCalculation {
 
     private String[] selectedDataStructorType;
 
-    public DSArray(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
+    public DSArray(EnumWordTable totalEnumWordList) {
+        super(totalEnumWordList);
     }
+
 
     @Override
     protected void initializeSelectedDataStructorType() {

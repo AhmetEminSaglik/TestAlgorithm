@@ -14,8 +14,8 @@ public abstract class AbstractTestRealizationForComplexityCalculation implements
     protected Stopwatch stopwatch = complexityService.getStopwatch();
     protected MemoryUsage memoryUsage = complexityService.getMemoryUsage();
 
-    public AbstractTestRealizationForComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
-        this.testAlgorithmResult = testAlgorithmResult;
+    public AbstractTestRealizationForComplexityCalculation(/*TestAlgorithmResult testAlgorithmResult*/) {
+//        this.testAlgorithmResult = testAlgorithmResult;
     }
 
     /**
@@ -26,21 +26,21 @@ public abstract class AbstractTestRealizationForComplexityCalculation implements
 
     public final void testAlgorithm() {
         prepareBeforeTest();
-        startCalculation();
+        startComplexityCalculation();
         realizeTestProcess();
-        stopCalculation();
-        setResultsAfterTest();
+        stopComplexityCalculation();
+//        setResultsAfterTest();
     }
 
     protected abstract void realizeTestProcess();
 
-    protected abstract void setResultsAfterTest();
+    protected abstract void setResultsAfterTest(TestAlgorithmResult testAlgorithmResult);
 
-    protected final void startCalculation() {
+    protected final void startComplexityCalculation() {
         complexityService.startComplexityCalculation();
     }
 
-    protected final void stopCalculation() {
+    protected final void stopComplexityCalculation() {
         complexityService.stopComplexityCalculation();
     }
 

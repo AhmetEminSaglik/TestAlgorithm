@@ -7,15 +7,11 @@ import org.ahmeteminsaglik.entities.db.SortAlgorithm;
 
 import java.util.List;
 
-public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTestRealizationForComplexityCalculation implements BaseSortAlgorithmFunction{
+public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTestRealizationForComplexityCalculation implements BaseSortAlgorithmFunction {
 
     private Object storedDataStructorObject;
     private BaseSortAlgorithmFunction sortAlgorithmFunction;
     private BaseDataStructorComplexityCalculation dataStructorType;
-
-    public BaseSortAlgorithmComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
-        super(testAlgorithmResult);
-    }
 
 
     @Override
@@ -25,17 +21,17 @@ public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTes
     @Override
     protected void realizeTestProcess() {
         System.out.println("REALIZE TEST SORT : ");
-        sortDataStructor(storedDataStructorObject,sortAlgorithmFunction);
+        sortDataStructor(storedDataStructorObject, sortAlgorithmFunction);
     }
 
     public void setDataStructorToBeSort(Object storedDataStructorObject, BaseSortAlgorithmFunction sortAlgorithmFunction) {
         this.storedDataStructorObject = storedDataStructorObject;
         this.sortAlgorithmFunction = sortAlgorithmFunction;
-        System.out.println( "SET : storedDataStructorObject : " +storedDataStructorObject);
+        System.out.println("SET : storedDataStructorObject : " + storedDataStructorObject);
     }
 
     private void sortDataStructor(Object dataObject, BaseSortAlgorithmFunction sortAlgorithmFunction) {
-        BaseDataStructorComplexityCalculation dataStructorType=(BaseDataStructorComplexityCalculation)dataObject;
+        BaseDataStructorComplexityCalculation dataStructorType = (BaseDataStructorComplexityCalculation) dataObject;
 
         if (dataStructorType.getSelectedDataStructorType() instanceof List) {
             List<String> list = (List<String>) dataStructorType.getSelectedDataStructorType();
@@ -51,7 +47,7 @@ public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTes
     }
 
     @Override
-    protected void setResultsAfterTest() {
+    protected void setResultsAfterTest(TestAlgorithmResult testAlgorithmResult) {
         testAlgorithmResult.setComplexityConseptSortAlgorithm(stopwatch, memoryUsage);
     }
 }
