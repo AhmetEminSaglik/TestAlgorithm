@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.entity.algorithm.concrete;
+package org.ahmeteminsaglik.entity.algorithm.concrete.sort;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 

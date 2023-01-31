@@ -3,7 +3,7 @@ package org.ahmeteminsaglik.entity.algorithm.sortalgorithm;
 import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.concrete.InsertionSort;
+import org.ahmeteminsaglik.entity.algorithm.concrete.sort.InsertionSort;
 
 import java.util.List;
 

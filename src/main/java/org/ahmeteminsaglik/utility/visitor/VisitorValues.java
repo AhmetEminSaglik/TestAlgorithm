@@ -1,13 +1,16 @@
 package org.ahmeteminsaglik.utility.visitor;
 
+import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.datastructor.DSArray;
 import org.ahmeteminsaglik.entity.algorithm.datastructor.DSArrayList;
+import org.ahmeteminsaglik.entity.algorithm.searchalgorithm.SALinearSearch;
 import org.ahmeteminsaglik.entity.algorithm.sortalgorithm.SABubbleSort;
 import org.ahmeteminsaglik.entity.algorithm.sortalgorithm.SAInsertionSort;
 import org.ahmeteminsaglik.enums.EnumDataStructor;
+import org.ahmeteminsaglik.enums.EnumSearchAlgorithm;
 import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
 
 public class VisitorValues {
@@ -29,6 +32,13 @@ public class VisitorValues {
             return new SAInsertionSort(testAlgorithmResult);
 
         System.out.println("NULLL SORT ALGORITHM");
+        return null;
+    }
+
+    public synchronized static BaseSearchAlgorithmComplexityCalculation getSearchAlgorithm(TestAlgorithmResult testAlgorithmResult) {
+        if (EnumSearchAlgorithm.LINEAR_SEARCH.equals(testAlgorithmResult.getSearchAlgorithmProcess())) {
+            return new SALinearSearch(testAlgorithmResult);
+        }
         return null;
     }
 

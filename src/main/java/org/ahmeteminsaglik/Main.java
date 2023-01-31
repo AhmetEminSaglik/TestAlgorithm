@@ -16,16 +16,13 @@ public class Main {
 //        printInfo(testAlgorithmResult);
 
         testAlgorithm.test(testAlgorithmResult);
-        testAlgorithmResult = testAlgorithm.getTestResult();
-
-//        System.out.println("AFTER  TEST : ");
         printInfo(testAlgorithmResult);
     }
 
     static TestAlgorithmResult buildFakeTestAlgorithmResult() {
         SetTestResultService setResultService = new TestAlgorithmResult();
 
-        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_50_000, EnumWordTable.WORD_10_000);
+        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_10_000, EnumWordTable.WORD_1_500);
 
         setResultService
                 .setDataStructorProcess(EnumDataStructor.ARRAYLIST)
@@ -62,6 +59,8 @@ public class Main {
 
             System.out.println("Used Memory (KB) :" + result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
             System.out.println("Elapsed Time : " + result.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
+            System.out.println("Found word number : "+result.getWordProcessStatistic().getFoundWord());
+            System.out.println("Missing word number : "+result.getWordProcessStatistic().getMissingWord());
         } else {
             System.out.println("getSearchAlgorithmComplexityConcept : is NULL");
         }
