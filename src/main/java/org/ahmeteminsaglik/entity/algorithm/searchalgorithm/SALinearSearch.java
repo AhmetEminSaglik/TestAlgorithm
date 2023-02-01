@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
-import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.concrete.search.LinearSearch;
 

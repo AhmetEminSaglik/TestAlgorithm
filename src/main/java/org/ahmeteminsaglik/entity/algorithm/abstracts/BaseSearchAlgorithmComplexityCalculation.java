@@ -1,14 +1,11 @@
-package org.ahmeteminsaglik.API.concretes;
+package org.ahmeteminsaglik.entity.algorithm.abstracts;
 
 import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComplexityCalculation;
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
-import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 import org.ahmeteminsaglik.API.business.visitor.search.DataStructorSearchElement;
 import org.ahmeteminsaglik.API.business.visitor.search.DataStructorSearchVisitor;
-import org.ahmeteminsaglik.API.business.visitor.sort.DataStructorSortVisitor;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.WordProcessStatistics;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.enums.EnumWordTable;
 import org.ahmeteminsaglik.utility.RetriveDataFromDBUtility;
 
@@ -27,8 +24,10 @@ public abstract class BaseSearchAlgorithmComplexityCalculation extends AbstractT
         super(testAlgorithmResult);
         this.wordTableSearch = testAlgorithmResult.getWordProcessUsedTable().getEnumSearchWordList();
     }
+
     private void accept(DataStructorSearchVisitor visitor) {
-        visitor.visit(this);
+        foundWords = visitor.visit(this);
+        missingWords = wordSearchList.size() - foundWords;
     }
 
 
@@ -76,6 +75,8 @@ public abstract class BaseSearchAlgorithmComplexityCalculation extends AbstractT
     @Override
     protected void setResultsAfterTest() {
         testAlgorithmResult.setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);
+        System.out.println("found words : " + foundWords);
+        System.out.println("missing words : " + missingWords);
         testAlgorithmResult.setWordProcessStatistic(new WordProcessStatistics(foundWords, missingWords));
     }
 

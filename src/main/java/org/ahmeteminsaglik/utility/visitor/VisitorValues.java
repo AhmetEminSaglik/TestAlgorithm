@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.utility.visitor;
 
-import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;

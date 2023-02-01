@@ -12,9 +12,6 @@ public class Main {
     public static void main(String[] args) {
         TestAlgorithmResult testAlgorithmResult = buildFakeTestAlgorithmResult();
         TestAlgorithm testAlgorithm = new TestAlgorithm();
-//        System.out.println("BEFORE TEST : ");
-//        printInfo(testAlgorithmResult);
-
         testAlgorithm.test(testAlgorithmResult);
         printInfo(testAlgorithmResult);
     }
@@ -22,15 +19,12 @@ public class Main {
     static TestAlgorithmResult buildFakeTestAlgorithmResult() {
         SetTestResultService setResultService = new TestAlgorithmResult();
 
-        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_100, EnumWordTable.WORD_50);
+        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_10_000, EnumWordTable.WORD_20_000);
 
         setResultService
-                .setDataStructorProcess(EnumDataStructor.ARRAY)
-//                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
+                .setDataStructorProcess(EnumDataStructor.ARRAYLIST)
                 .setSortAlgorithmProcess(EnumSortAlgorithm.INSERTION_SORT)
-//                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
                 .setSearchAlgorithmProcess(EnumSearchAlgorithm.LINEAR_SEARCH)
-//                .setComplexityConseptDataStructor(new Stopwatch(), new MemoryUsage())
                 .setWordProcessUsedTable(wordProcessUsedTable);
         return (TestAlgorithmResult) setResultService;
 
