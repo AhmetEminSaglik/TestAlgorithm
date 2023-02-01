@@ -11,13 +11,11 @@ import org.ahmeteminsaglik.utility.RetriveDataFromDBUtility;
 import java.util.List;
 
 public abstract class BaseDataStructorComplexityCalculation extends AbstractTestRealizationForComplexityCalculation implements DataStructorSortVisitor, DataStructorSearchVisitor {
-    //    private EnumDataStructor enumDataStructor;
     private EnumWordTable wordTablePool;
     protected List<String> wordListString;
 
     public BaseDataStructorComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
-//        this.enumDataStructor = testAlgorithmResult.getDataStructorProcess();
         this.wordTablePool = testAlgorithmResult.getWordProcessUsedTable().getEnumTotalWordList();
     }
 
@@ -38,8 +36,6 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
 
     @Override
     protected final void setResultsAfterTest() {
-//        Stopwatch stopwatch = complexityService.getStopwatch();
-//        MemoryUsage memoryUsage = complexityService.getMemoryUsage();
         testAlgorithmResult.setComplexityConseptDataStructor(stopwatch, memoryUsage);
     }
 
