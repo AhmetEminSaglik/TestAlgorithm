@@ -48,7 +48,6 @@ public abstract class BaseDataStructorComplexityCalculation extends AbstractTest
         wordListString = RetriveDataFromDBUtility.getWordListFromDatabaseInStringFormat(wordTablePool);
     }
 
-    public abstract Object getSelectedDataStructorType();
 
     protected abstract void initializeSelectedDataStructorType();
 }

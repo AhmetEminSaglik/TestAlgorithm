@@ -22,15 +22,21 @@ public class TestAlgorithm {
         BaseDataStructorComplexityCalculation baseDataStructor = VisitorValues.getDataStructor(testAlgorithmResult);
 
         BaseSortAlgorithmComplexityCalculation baseSortAlgo = VisitorValues.getSortAlgorithm(testAlgorithmResult);
-        baseSortAlgo.setVisitorForSortProcess(baseDataStructor);
+        if (baseSortAlgorithm != null) {
+            baseSortAlgo.setVisitorForSortProcess(baseDataStructor);
+        }
 
         BaseSearchAlgorithmComplexityCalculation baseSearchAlgo = VisitorValues.getSearchAlgorithm(testAlgorithmResult);
         baseSearchAlgo.setVisitorForSearchProcess(baseDataStructor);
 
-
-        list.add(baseDataStructor);
-        list.add(baseSortAlgo);
-        list.add(baseSearchAlgo);
+        if (baseDataStructor != null) {
+            list.add(baseDataStructor);
+        }
+        if (baseSortAlgo != null) {
+            list.add(baseSortAlgo);
+        }if (baseSearchAlgo != null) {
+            list.add(baseSearchAlgo);
+        }
         return list;
 
     }

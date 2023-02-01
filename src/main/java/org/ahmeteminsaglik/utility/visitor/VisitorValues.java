@@ -6,6 +6,8 @@ import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexity
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.datastructor.DSArray;
 import org.ahmeteminsaglik.entity.algorithm.datastructor.DSArrayList;
+import org.ahmeteminsaglik.entity.algorithm.datastructor.DSHashMap;
+import org.ahmeteminsaglik.entity.algorithm.searchalgorithm.SAHashMapSearch;
 import org.ahmeteminsaglik.entity.algorithm.searchalgorithm.SALinearSearch;
 import org.ahmeteminsaglik.entity.algorithm.sortalgorithm.SABubbleSort;
 import org.ahmeteminsaglik.entity.algorithm.sortalgorithm.SAInsertionSort;
@@ -20,6 +22,9 @@ public class VisitorValues {
         }
         if (EnumDataStructor.ARRAY.equals(testAlgorithmResult.getDataStructorProcess())) {
             return new DSArray(testAlgorithmResult);
+        }
+        if (EnumDataStructor.HASHMAP.equals(testAlgorithmResult.getDataStructorProcess())) {
+            return new DSHashMap(testAlgorithmResult);
         }
         return null;
     }
@@ -38,6 +43,9 @@ public class VisitorValues {
     public synchronized static BaseSearchAlgorithmComplexityCalculation getSearchAlgorithm(TestAlgorithmResult testAlgorithmResult) {
         if (EnumSearchAlgorithm.LINEAR_SEARCH.equals(testAlgorithmResult.getSearchAlgorithmProcess())) {
             return new SALinearSearch(testAlgorithmResult);
+        }
+        if (EnumSearchAlgorithm.HASHMAP.equals(testAlgorithmResult.getSearchAlgorithmProcess())) {
+            return new SAHashMapSearch(testAlgorithmResult);
         }
         return null;
     }

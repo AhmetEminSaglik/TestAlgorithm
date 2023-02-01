@@ -19,12 +19,14 @@ public class Main {
     static TestAlgorithmResult buildFakeTestAlgorithmResult() {
         SetTestResultService setResultService = new TestAlgorithmResult();
 
-        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_10_000, EnumWordTable.WORD_20_000);
+        WordProcessUsedTable wordProcessUsedTable = new WordProcessUsedTable(EnumWordTable.WORD_1_000, EnumWordTable.WORD_250);
 
         setResultService
-                .setDataStructorProcess(EnumDataStructor.ARRAYLIST)
-                .setSortAlgorithmProcess(EnumSortAlgorithm.INSERTION_SORT)
-                .setSearchAlgorithmProcess(EnumSearchAlgorithm.LINEAR_SEARCH)
+                .setDataStructorProcess(EnumDataStructor.HASHMAP)
+//                .setSortAlgorithmProcess(EnumSortAlgorithm.INSERTION_SORT)
+                .setSortAlgorithmProcess(EnumSortAlgorithm.NO_SORT)
+//                .setSearchAlgorithmProcess(EnumSearchAlgorithm.LINEAR_SEARCH)
+                .setSearchAlgorithmProcess(EnumSearchAlgorithm.HASHMAP)
                 .setWordProcessUsedTable(wordProcessUsedTable);
         return (TestAlgorithmResult) setResultService;
 

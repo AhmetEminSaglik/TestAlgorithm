@@ -6,6 +6,7 @@ import org.ahmeteminsaglik.API.business.visitor.search.DataStructorSearchElement
 import org.ahmeteminsaglik.API.business.visitor.search.DataStructorSearchVisitor;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.WordProcessStatistics;
+import org.ahmeteminsaglik.entity.algorithm.concrete.search.LinearSearch;
 import org.ahmeteminsaglik.enums.EnumWordTable;
 import org.ahmeteminsaglik.utility.RetriveDataFromDBUtility;
 
@@ -19,6 +20,7 @@ public abstract class BaseSearchAlgorithmComplexityCalculation extends AbstractT
     private int foundWords = 0;
     private int missingWords = 0;
     private DataStructorSearchVisitor visitor;
+    protected BaseSearchAlgorithmFunction baseSearchAlgorithmFunction;
 
     public BaseSearchAlgorithmComplexityCalculation(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);

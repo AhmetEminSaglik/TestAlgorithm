@@ -1,36 +1,35 @@
 package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class DSArrayList extends BaseDataStructorComplexityCalculation {
-    private List<String> selectedDataStructorType;
-
-    public DSArrayList(TestAlgorithmResult testAlgorithmResult) {
+public class DSHashMap extends BaseDataStructorComplexityCalculation {
+    public DSHashMap(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
     }
 
+    private HashMap<String, String> selectedDataStructorType;
+
     @Override
     protected void initializeSelectedDataStructorType() {
-        selectedDataStructorType = new ArrayList<>();
+        selectedDataStructorType = new HashMap<>();
     }
 
     @Override
     protected void addValuesToDataStructorType() {
-        System.out.println("add values in DS ARRAYLIST ");
         for (String tmp : wordListString) {
-            selectedDataStructorType.add(tmp);
+            selectedDataStructorType.put(tmp, tmp);
         }
     }
 
+    /*No-sort Algorithm For Hashset*/
     @Override
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
-        baseSortAlgorithm.sort(selectedDataStructorType);
     }
 
     @Override
@@ -45,4 +44,5 @@ public class DSArrayList extends BaseDataStructorComplexityCalculation {
         }
         return foundWordNumber;
     }
+
 }
