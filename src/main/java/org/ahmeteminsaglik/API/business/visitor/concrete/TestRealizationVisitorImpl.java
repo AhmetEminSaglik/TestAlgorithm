@@ -7,6 +7,7 @@ public class TestRealizationVisitorImpl implements TestRealizationVisitor {
 
     @Override
     public void visit(AbstractTestRealizationForComplexityCalculation abstractTestRealization) {
+        System.out.println("abstractTestRealization : "+abstractTestRealization.getClass().getSimpleName());
         abstractTestRealization.testAlgorithm();
     }
 }

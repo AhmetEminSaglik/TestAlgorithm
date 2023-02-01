@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -41,6 +41,11 @@
         <dependency>
             <groupId>org.ahmeteminsaglik</groupId>
             <artifactId>sn-database-connection</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>available-algorithm</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

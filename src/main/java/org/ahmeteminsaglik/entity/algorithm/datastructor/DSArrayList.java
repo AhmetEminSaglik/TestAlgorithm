@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
-import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
@@ -29,22 +29,20 @@ public class DSArrayList extends BaseDataStructorComplexityCalculation {
     }
 
     @Override
-    public List<String> getSelectedDataStructorType() {
-        return selectedDataStructorType;
-    }
-
-    @Override
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
         baseSortAlgorithm.sort(selectedDataStructorType);
     }
-/*    private  void printList(){
-        for(String tmp : selectedDataStructorType){
-            System.out.print(tmp+", ");
-        }
-    }*/
 
     @Override
-    public void visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm) {
-        baseSearchAlgorithm.search(selectedDataStructorType, baseSearchAlgorithm.getWordSearchList());
+    public int visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm) {
+        int foundWordNumber = 0;
+        List<String> searchWordList = baseSearchAlgorithm.getWordSearchList();
+        for (int i = 0; i < searchWordList.size(); i++) {
+            boolean result = baseSearchAlgorithm.search(selectedDataStructorType, searchWordList.get(i));
+            if (result) {
+                foundWordNumber++;
+            }
+        }
+        return foundWordNumber;
     }
 }

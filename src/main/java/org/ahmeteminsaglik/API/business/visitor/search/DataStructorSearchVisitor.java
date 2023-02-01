@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.API.business.visitor.search;
 
-import org.ahmeteminsaglik.API.concretes.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 
 public interface DataStructorSearchVisitor {
-    void visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm);
+    int visit(BaseSearchAlgorithmComplexityCalculation baseSearchAlgorithm);
 }

@@ -1,11 +1,13 @@
 package org.ahmeteminsaglik.entity.algorithm.concrete.search;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
+import org.hibernate.cfg.NotYetImplementedException;
 
+import javax.swing.text.html.HTMLWriter;
+import java.util.HashMap;
 import java.util.List;
 
 public class LinearSearch implements BaseSearchAlgorithmFunction {
-
 
     private boolean searchWithLinearSearch(List<String> list, String val) {
         for (int i = 0; i < list.size(); i++) {
@@ -26,26 +28,19 @@ public class LinearSearch implements BaseSearchAlgorithmFunction {
     }
 
     @Override
-    public int search(List<String> wordPoollist, List<String> searchWordList) {
-        int foundWordNumber = 0;
-        for (String tmp : searchWordList) {
-            boolean result = searchWithLinearSearch(wordPoollist, tmp);
-            if (result) {
-                foundWordNumber++;
-            }
-        }
-        return foundWordNumber;
+    public boolean search(List<String> wordPoollist, String word) {
+        return searchWithLinearSearch(wordPoollist, word);
     }
 
     @Override
-    public int search(String[] wordPoolArr, List<String> searchWordList) {
-        int foundWordNumber = 0;
-        for (String tmp : searchWordList) {
-            boolean result = searchWithLinearSearch(wordPoolArr, tmp);
-            if (result) {
-                foundWordNumber++;
-            }
-        }
-        return foundWordNumber;
+    public boolean search(String[] wordPoolArr, String word) {
+        return searchWithLinearSearch(wordPoolArr, word);
+    }
+
+    @Override
+    public boolean search(HashMap<String, String> hashSet, String word) {
+        System.err.println("!!! WRONG PROCESSS --> HASHSET SEARCH IS NOT ABLE TO IMPLEMENT IN " + getClass().getSimpleName());
+//        throw new NotYetImplementedException();
+        return false;
     }
 }

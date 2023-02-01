@@ -17,7 +17,6 @@ public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTes
         super(testAlgorithmResult);
     }
 
-    //    @Override
     private void accept(DataStructorSortVisitor visitor) {
         visitor.visit(this);
     }
@@ -33,7 +32,6 @@ public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTes
 
     @Override
     protected void realizeTestProcess() {
-        System.out.println("REALIZE TEST SORT : ");
         accept(visitor);
     }
 
