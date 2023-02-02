@@ -9,7 +9,7 @@ import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
 
 public class InvalidSelectedSearchAlgorithmException extends BaseCustomException {
     public InvalidSelectedSearchAlgorithmException(EnumDataStructor enumDataStructor, EnumSearchAlgorithm enumSearchAlgorithm) {
-        super("Invalid match : " + enumSearchAlgorithm.getName().toUpperCase() + " vs " + enumDataStructor.getName().toUpperCase()+" data structor" +
+        super("Invalid match : " + enumSearchAlgorithm.getName().toUpperCase() + " vs " + enumDataStructor.getName().toUpperCase()+" data structor." +
                 "\nPlease check out the following Search Algorithm - Data Structor instruction to use it properly." +
                 "\n" + SolutionForException.getSearchAlgorithmInstructorWithSuitableDataStructor());
     }
