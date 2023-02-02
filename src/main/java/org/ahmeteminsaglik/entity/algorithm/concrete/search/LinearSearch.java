@@ -37,10 +37,4 @@ public class LinearSearch implements BaseSearchAlgorithmFunction {
         return searchWithLinearSearch(wordPoolArr, word);
     }
 
-    @Override
-    public boolean search(HashMap<String, String> hashSet, String word) {
-        System.err.println("!!! WRONG PROCESSS --> HASHSET SEARCH IS NOT ABLE TO IMPLEMENT IN " + getClass().getSimpleName());
-//        throw new NotYetImplementedException();
-        return false;
-    }
 }
