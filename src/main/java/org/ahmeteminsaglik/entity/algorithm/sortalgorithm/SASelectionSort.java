@@ -2,8 +2,8 @@ package org.ahmeteminsaglik.entity.algorithm.sortalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.concrete.sort.SelectionSort;
+import org.ahmeteminsaglik.entity.abstracts.BaseSortAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.concrete.sort.SelectionSort;
 
 import java.util.List;
 

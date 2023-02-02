@@ -43,8 +43,6 @@ Isrc/main/java/org/ahmeteminsaglik/core/solution/SolutionForException.java,e\f\
 Nsrc/main/java/org/ahmeteminsaglik/core/exception/base/BaseCustomException.java,3\7\3762d7ace7c7739b7c9f45562abc357da04ea7cf
 Ñ
 Tsrc/main/java/org/ahmeteminsaglik/entity/algorithm/concrete/search/LinearSearch.java,f\3\f3f1cd4b0a9c637118f4e08112d6041c24a1a47d
-Ü
-Vsrc/main/java/org/ahmeteminsaglik/entity/algorithm/searchalgorithm/SALinearSearch.java,a\2\a24139e3464a741ab9bec24cc6dc75c50ad049f1
 á
 Wsrc/main/java/org/ahmeteminsaglik/entity/algorithm/searchalgorithm/SAHashMapSearch.java,5\f\5f0ebd9c48da2d08f075ec21b8cb78c51af85107
 Ä
@@ -67,7 +65,5 @@ hsrc/main/java/org/ahmeteminsaglik/entity/algorithm/abstracts/BaseSortAlgorithmC
 Ssrc/main/java/org/ahmeteminsaglik/entity/algorithm/concrete/sort/InsertionSort.java,d\d\ddeafb16c96bb2191c0ed97a4de4e563204b1835
 Ç
 Rsrc/main/java/org/ahmeteminsaglik/entity/algorithm/sortalgorithm/SABubbleSort.java,7\0\701e7f1dce9224570094d88007dc755d30ae2bc1
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 ç
 ]src/main/java/org/ahmeteminsaglik/entity/algorithm/searchalgorithm/SAInterpolationSearch.java,d\e\de331899c37f661f347416d919b5a61bc4defb5b

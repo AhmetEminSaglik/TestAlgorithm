@@ -1,9 +1,9 @@
 package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.concrete.search.LinearSearch;
+import org.ahmeteminsaglik.entity.concrete.search.LinearSearch;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.entity.algorithm.abstracts;
+package org.ahmeteminsaglik.entity.abstracts;
 
 import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComplexityCalculation;
 

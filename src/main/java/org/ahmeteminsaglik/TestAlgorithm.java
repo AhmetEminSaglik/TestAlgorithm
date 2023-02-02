@@ -5,9 +5,9 @@ import org.ahmeteminsaglik.API.business.visitor.TestRealizationVisitor;
 import org.ahmeteminsaglik.API.business.visitor.concrete.TestRealizationVisitorImpl;
 import org.ahmeteminsaglik.core.exception.InvalidSelectedSearchAlgorithmException;
 import org.ahmeteminsaglik.core.exception.InvalidSelectedSortAlgorithmException;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseDataStructorComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSortAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.utility.visitor.VisitorValues;
 
 import java.util.ArrayList;

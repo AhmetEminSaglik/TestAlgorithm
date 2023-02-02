@@ -1,11 +1,10 @@
 package org.ahmeteminsaglik.entity.algorithm.datastructor;
 
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseDataStructorComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSortAlgorithmComplexityCalculation;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.entity.algorithm.concrete.search;
+package org.ahmeteminsaglik.entity.concrete.search;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
 import org.hibernate.cfg.NotYetImplementedException;

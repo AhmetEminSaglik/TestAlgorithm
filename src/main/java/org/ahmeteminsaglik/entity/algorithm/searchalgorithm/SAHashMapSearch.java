@@ -2,11 +2,10 @@ package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.concrete.search.HashMapSearch;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.concrete.search.HashMapSearch;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class SAHashMapSearch extends BaseSearchAlgorithmComplexityCalculation implements BaseSearchAlgorithmFunction {
     public SAHashMapSearch(TestAlgorithmResult testAlgorithmResult) {

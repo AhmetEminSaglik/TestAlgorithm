@@ -2,7 +2,7 @@ package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.hibernate.cfg.NotYetImplementedException;
 
 import java.util.HashMap;
