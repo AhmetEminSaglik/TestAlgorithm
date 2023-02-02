@@ -11,12 +11,11 @@ import org.junit.jupiter.api.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestInvalidMatchDataStructorAndSortAlgorithm {
 
-    private TestAlgorithm testAlgorithm;
+    private TestAlgorithm testAlgorithm = new TestAlgorithm();
     private TestAlgorithmResult testAlgorithmResult;
 
     @BeforeEach
     public void prepareNecessaryObjects() {
-        testAlgorithm = new TestAlgorithm();
         testAlgorithmResult = new TestAlgorithmResult();
     }
 
@@ -87,7 +86,6 @@ public class TestInvalidMatchDataStructorAndSortAlgorithm {
         testAlgorithmResult = buildTestAlgorithmResult(EnumDataStructor.HASHMAP, EnumSortAlgorithm.TIM_SORT, EnumSearchAlgorithm.HASHMAP);
         testAlgorithm.test(testAlgorithmResult);
     }
-
 
 
     @Test
