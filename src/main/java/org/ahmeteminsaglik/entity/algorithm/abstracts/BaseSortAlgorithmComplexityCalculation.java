@@ -9,7 +9,7 @@ import org.ahmeteminsaglik.TestAlgorithmResult;
 public abstract class BaseSortAlgorithmComplexityCalculation extends AbstractTestRealizationForComplexityCalculation implements BaseSortAlgorithmFunction, DataStructorSortElement {
 
     private Object storedDataStructorObject;
-    private BaseSortAlgorithmFunction sortAlgorithmFunction;
+    protected BaseSortAlgorithmFunction baseSortAlgorithmFunction;
     private BaseDataStructorComplexityCalculation dataStructorType;
     private DataStructorSortVisitor visitor;
 

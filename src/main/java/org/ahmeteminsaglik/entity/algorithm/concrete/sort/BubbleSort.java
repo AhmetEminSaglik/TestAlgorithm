@@ -7,17 +7,17 @@ import java.util.List;
 
 public class BubbleSort implements BaseSortAlgorithmFunction {
     @Override
-    public void sort(List<String> list) {
-        sortWithBubbleSort(list);
+    public List<String> sort(List<String> list) {
+        return sortWithBubbleSort(list);
     }
 
     @Override
-    public void sort(String[] arr) {
-        sortWithBubbleSort(arr);
+    public String[] sort(String[] arr) {
+        return sortWithBubbleSort(arr);
     }
 
 
-    public static void sortWithBubbleSort(String[] arr) {
+    public static String[] sortWithBubbleSort(String[] arr) {
         String temp;
         for (int j = 0; j < arr.length; j++) {
             for (int i = j + 1; i < arr.length; i++) {
@@ -29,9 +29,10 @@ public class BubbleSort implements BaseSortAlgorithmFunction {
                 }
             }
         }
+        return arr;
     }
 
-    public static void sortWithBubbleSort(List<String> list) {
+    public static List<String> sortWithBubbleSort(List<String> list) {
         String temp;
         for (int j = 0; j < list.size(); j++) {
             for (int i = j + 1; i < list.size(); i++) {
@@ -43,6 +44,6 @@ public class BubbleSort implements BaseSortAlgorithmFunction {
                 }
             }
         }
+        return list;
     }
-
 }

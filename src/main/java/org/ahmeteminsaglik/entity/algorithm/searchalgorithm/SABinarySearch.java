@@ -5,8 +5,7 @@ import org.ahmeteminsaglik.TestAlgorithmResult;
 import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.hibernate.cfg.NotYetImplementedException;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class SABinarySearch extends BaseSearchAlgorithmComplexityCalculation implements BaseSearchAlgorithmFunction {
     public SABinarySearch(TestAlgorithmResult testAlgorithmResult) {
@@ -17,12 +16,20 @@ public class SABinarySearch extends BaseSearchAlgorithmComplexityCalculation imp
 
     @Override
     public boolean search(List<String> wordPoollist, String word) {
-        throw new NotYetImplementedException();
+        int result = Collections.binarySearch(wordPoollist, word);
+        if (result >= 0) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean search(String[] wordPoolArr, String word) {
-        throw new NotYetImplementedException();
+        int result = Arrays.binarySearch(wordPoolArr, word);
+        if (result >= 0) {
+            return true;
+        }
+        return false;
     }
 
     @Override

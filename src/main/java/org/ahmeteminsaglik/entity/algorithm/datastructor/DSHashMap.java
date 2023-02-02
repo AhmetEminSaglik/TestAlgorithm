@@ -31,7 +31,6 @@ public class DSHashMap extends BaseDataStructorComplexityCalculation {
     /*No-sort Algorithm For Hashset*/
     @Override
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
-        baseSortAlgorithm.sort(new ArrayList<>());
     }
 
     @Override

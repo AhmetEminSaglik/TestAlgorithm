@@ -8,14 +8,13 @@ import java.util.List;
 
 public class MergeSort implements BaseSortAlgorithmFunction {
     @Override
-    public void sort(List<String> list) {
-        list = sortWithMergeSort(list);
+    public List<String> sort(List<String> list) {
+        return sortWithMergeSort(list);
     }
 
     @Override
-    public void sort(String[] arr) {
-        arr = sortWithMergeSort(arr);
-
+    public String[] sort(String[] arr) {
+        return sortWithMergeSort(arr);
     }
 
 

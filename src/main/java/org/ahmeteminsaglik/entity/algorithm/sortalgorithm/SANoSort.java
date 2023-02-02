@@ -11,14 +11,16 @@ public class SANoSort extends BaseSortAlgorithmComplexityCalculation implements 
         super(testAlgorithmResult);
     }
 
+    /**
+     * Data will not be sorted*/
     @Override
-    public void sort(List<String> list) {
-        System.out.println("There wont be any sort process");
+    public List<String> sort(List<String> list) {
+        return list;
     }
-
+    /**
+     * Data will not be sorted*/
     @Override
-    public void sort(String[] arr) {
-        System.out.println("There wont be any sort process");
-
+    public String[] sort(String[] arr) {
+        return arr;
     }
 }

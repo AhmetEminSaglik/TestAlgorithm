@@ -16,12 +16,12 @@ public class SAQuickSort extends BaseSortAlgorithmComplexityCalculation implemen
 
 
     @Override
-    public void sort(List<String> list) {
+    public List<String> sort(List<String> list) {
         throw new NotYetImplementedException();
     }
 
     @Override
-    public void sort(String[] arr) {
+    public String[] sort(String[] arr) {
         throw new NotYetImplementedException();
     }
 

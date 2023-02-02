@@ -7,23 +7,19 @@ import org.ahmeteminsaglik.entity.algorithm.concrete.sort.InsertionSort;
 
 import java.util.List;
 
-public class SAInsertionSort extends BaseSortAlgorithmComplexityCalculation implements  BaseSortAlgorithmFunction {
-    BaseSortAlgorithmFunction baseSortAlgorithmFunction = new InsertionSort();
-
+public class SAInsertionSort extends BaseSortAlgorithmComplexityCalculation implements BaseSortAlgorithmFunction {
     public SAInsertionSort(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
-    }
-
-
-    @Override
-    public void sort(List<String> list) {
-        System.out.println("Insertion Sort ARRAYLIST : size : "+list.size());
-        baseSortAlgorithmFunction.sort(list);
+        baseSortAlgorithmFunction = new InsertionSort();
     }
 
     @Override
-    public void sort(String[] arr) {
-        System.out.println("Insertion Sort ARRAY : size :  "+arr.length);
-        baseSortAlgorithmFunction.sort(arr);
+    public List<String> sort(List<String> list) {
+        return baseSortAlgorithmFunction.sort(list);
+    }
+
+    @Override
+    public String[] sort(String[] arr) {
+        return baseSortAlgorithmFunction.sort(arr);
     }
 }

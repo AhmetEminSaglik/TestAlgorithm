@@ -2,20 +2,21 @@ package org.ahmeteminsaglik.entity.algorithm.concrete.sort;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 
+import java.awt.datatransfer.ClipboardOwner;
 import java.util.List;
 
 public class InsertionSort implements BaseSortAlgorithmFunction {
     @Override
-    public void sort(List<String> list) {
-        sortWithInsertionSort(list);
+    public List<String> sort(List<String> list) {
+        return sortWithInsertionSort(list);
     }
 
     @Override
-    public void sort(String[] arr) {
-        sortWithInsertionSort(arr);
+    public String[] sort(String[] arr) {
+        return sortWithInsertionSort(arr);
     }
 
-    private void sortWithInsertionSort(String[] array) {
+    private String[] sortWithInsertionSort(String[] array) {
         String temp = "";
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -26,9 +27,10 @@ public class InsertionSort implements BaseSortAlgorithmFunction {
                 }
             }
         }
+        return array;
     }
 
-    private void sortWithInsertionSort(List<String> list) {
+    private List<String> sortWithInsertionSort(List<String> list) {
         String temp = "";
         for (int i = 0; i < list.size(); i++) {
             for (int j = i + 1; j < list.size(); j++) {
@@ -39,5 +41,6 @@ public class InsertionSort implements BaseSortAlgorithmFunction {
                 }
             }
         }
+        return list;
     }
 }

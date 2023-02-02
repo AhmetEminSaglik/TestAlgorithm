@@ -29,7 +29,7 @@ public class DSSearchNodeV1 extends BaseDataStructorComplexityCalculation {
     @Override
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
 //        try {
-            baseSortAlgorithm.sort(selectedDataStructorType);
+//            baseSortAlgorithm.sort(selectedDataStructorType);
 //        } catch (InvalidSelectedSortAlgorithmException e) {
 //            throw new RuntimeException(e);
 //        }

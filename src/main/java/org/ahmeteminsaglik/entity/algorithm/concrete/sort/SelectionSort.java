@@ -7,16 +7,16 @@ import java.util.List;
 
 public class SelectionSort implements BaseSortAlgorithmFunction {
     @Override
-    public void sort(List<String> list) {
-        sortWithSelectionSort(list);
+    public List<String> sort(List<String> list) {
+        return sortWithSelectionSort(list);
     }
 
     @Override
-    public void sort(String[] arr) {
-        sortWithSelectionSort(arr);
+    public String[] sort(String[] arr) {
+        return sortWithSelectionSort(arr);
     }
 
-    private void sortWithSelectionSort(List<String> list) {
+    private List<String> sortWithSelectionSort(List<String> list) {
         // Find the string reference that should go in each cell of
         // the array, from cell 0 to the end
         for (int j = 0; j < list.size() - 1; j++) {
@@ -31,10 +31,10 @@ public class SelectionSort implements BaseSortAlgorithmFunction {
             list.set(j, list.get(min));
             list.set(min, temp);
         }
-
+        return list;
     }
 
-    public static void sortWithSelectionSort(String[] array) {
+    public static String[] sortWithSelectionSort(String[] array) {
 
         // Find the string reference that should go in each cell of
         // the array, from cell 0 to the end
@@ -50,7 +50,7 @@ public class SelectionSort implements BaseSortAlgorithmFunction {
             array[j] = array[min];
             array[min] = temp;
         }
-
+        return array;
     }
 
 

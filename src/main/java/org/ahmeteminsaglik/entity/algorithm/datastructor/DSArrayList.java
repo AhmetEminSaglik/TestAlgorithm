@@ -30,7 +30,7 @@ public class DSArrayList extends BaseDataStructorComplexityCalculation {
 
     @Override
     public void visit(BaseSortAlgorithmComplexityCalculation baseSortAlgorithm) {
-        baseSortAlgorithm.sort(selectedDataStructorType);
+        selectedDataStructorType = baseSortAlgorithm.sort(selectedDataStructorType);
     }
 
     @Override
