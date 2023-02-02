@@ -71,6 +71,7 @@ public class VisitorValues {
     }
 
     private static EnumSortAlgorithm getRequestEnumSortAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) throws InvalidSelectedSortAlgorithmException {
+        fillEnumSortProcessIfItIsNull(testAlgorithmResult);
         List<EnumSortAlgorithm> enumSortAlgorithmList = availableAlgorithm.getAvailableEnumSortAlgorithmListWithGivenDataStructor(enumDataStructor);
         for (EnumSortAlgorithm tmp : enumSortAlgorithmList) {
             if (tmp == testAlgorithmResult.getSortAlgorithmProcess()) {
@@ -78,7 +79,11 @@ public class VisitorValues {
             }
         }
         throw new InvalidSelectedSortAlgorithmException(enumDataStructor,testAlgorithmResult.getSortAlgorithmProcess());
-//        return null;
+    }
+    private static void fillEnumSortProcessIfItIsNull(TestAlgorithmResult testAlgorithmResult){
+        if(testAlgorithmResult.getSortAlgorithmProcess()==null){
+            testAlgorithmResult.setSortAlgorithmProcess(EnumSortAlgorithm.NO_SORT);
+        }
     }
 
 

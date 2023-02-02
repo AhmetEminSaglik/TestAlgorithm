@@ -1,7 +1,6 @@
 package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.API.business.abstracts.AbstractTestRealizationForComplexityCalculation;
-import org.ahmeteminsaglik.API.business.abstracts.BaseSortAlgorithmFunction;
 import org.ahmeteminsaglik.API.business.visitor.TestRealizationVisitor;
 import org.ahmeteminsaglik.API.business.visitor.concrete.TestRealizationVisitorImpl;
 import org.ahmeteminsaglik.core.exception.InvalidSelectedSearchAlgorithmException;
@@ -13,12 +12,11 @@ import org.ahmeteminsaglik.utility.visitor.VisitorValues;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class TestAlgorithm {
     private TestAlgorithmResult testAlgorithmResult;
-    private BaseDataStructorComplexityCalculation baseDataStructor;
-    private BaseSortAlgorithmComplexityCalculation baseSortAlgorithm;
-
+    private final Logger logger= Logger.getLogger(getClass().getName());
     private List<AbstractTestRealizationForComplexityCalculation> getUsedAlgorithms() throws InvalidSelectedSortAlgorithmException, InvalidSelectedSearchAlgorithmException {
         List<AbstractTestRealizationForComplexityCalculation> list = new ArrayList<>();
 
@@ -50,25 +48,21 @@ public class TestAlgorithm {
 
 
     public void test(TestAlgorithmResult testAlgorithmResult) {
-
         try {
-
             this.testAlgorithmResult = testAlgorithmResult;
             List<AbstractTestRealizationForComplexityCalculation> testRealization = getUsedAlgorithms();
             TestRealizationVisitor visitor = new TestRealizationVisitorImpl();
             for (AbstractTestRealizationForComplexityCalculation tmp : testRealization) {
-                System.out.println("tmp : " + tmp);
                 visitor.visit(tmp);
             }
             testAlgorithmResult.getDataStructorComplexityConcept();
             testAlgorithmResult.getSortAlgorithmComplexityConcept();
             testAlgorithmResult.getSearchAlgorithmProcess();
-        } catch (InvalidSelectedSortAlgorithmException e) {
-            System.err.println(e.getMessage());
-        } catch (InvalidSelectedSearchAlgorithmException e) {
-            System.err.println(e.getMessage());
+        } catch (InvalidSelectedSortAlgorithmException | InvalidSelectedSearchAlgorithmException e) {
+            logger.severe(e.getMessage());
         }
     }
+
 
 
 }
