@@ -1,11 +1,10 @@
 package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.concrete.search.LinearSearch;
+import org.ahmeteminsaglik.entity.concrete.search.LinearSearch;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class SALinearSearch extends BaseSearchAlgorithmComplexityCalculation implements BaseSearchAlgorithmFunction {
@@ -13,7 +12,6 @@ public class SALinearSearch extends BaseSearchAlgorithmComplexityCalculation imp
         super(testAlgorithmResult);
         baseSearchAlgorithmFunction = new LinearSearch();
     }
-
 
     @Override
     public boolean search(List<String> wordPoollist, String word) {
@@ -25,9 +23,9 @@ public class SALinearSearch extends BaseSearchAlgorithmComplexityCalculation imp
         return baseSearchAlgorithmFunction.search(wordPoolArr, word);
     }
 
-    @Override
+/*    @Override
     public boolean search(HashMap<String, String> map, String word) {
         System.err.println("!!! WRONG PROCESSS --> HASHSET SEARCH IS NOT ABLE TO IMPLEMENT IN " + getClass().getSimpleName());
         return false;// baseSearchAlgorithmFunction.search(map, word);
-    }
+    }*/
 }

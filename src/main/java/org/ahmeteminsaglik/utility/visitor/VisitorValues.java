@@ -1,10 +1,12 @@
 package org.ahmeteminsaglik.utility.visitor;
 
 import org.ahmeteminsaglik.AvailableAlgorithm;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.core.exception.InvalidSelectedSearchAlgorithmException;
+import org.ahmeteminsaglik.core.exception.InvalidSelectedSortAlgorithmException;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseDataStructorComplexityCalculation;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSortAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseDataStructorComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSortAlgorithmComplexityCalculation;
 import org.ahmeteminsaglik.entity.algorithm.datastructor.*;
 import org.ahmeteminsaglik.entity.algorithm.searchalgorithm.*;
 import org.ahmeteminsaglik.entity.algorithm.sortalgorithm.*;
@@ -37,7 +39,7 @@ public class VisitorValues {
         }
     }
 
-    public synchronized static BaseSortAlgorithmComplexityCalculation getSortAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) {
+    public synchronized static BaseSortAlgorithmComplexityCalculation getSortAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) throws InvalidSelectedSortAlgorithmException {
 
         EnumSortAlgorithm decidedEnumSortAlgorithm = getRequestEnumSortAlgorithm(enumDataStructor, testAlgorithmResult);
 
@@ -68,14 +70,20 @@ public class VisitorValues {
 
     }
 
-    private static EnumSortAlgorithm getRequestEnumSortAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) {
+    private static EnumSortAlgorithm getRequestEnumSortAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) throws InvalidSelectedSortAlgorithmException {
+        fillEnumSortProcessIfItIsNull(testAlgorithmResult);
         List<EnumSortAlgorithm> enumSortAlgorithmList = availableAlgorithm.getAvailableEnumSortAlgorithmListWithGivenDataStructor(enumDataStructor);
         for (EnumSortAlgorithm tmp : enumSortAlgorithmList) {
             if (tmp == testAlgorithmResult.getSortAlgorithmProcess()) {
                 return tmp;
             }
         }
-        return null;
+        throw new InvalidSelectedSortAlgorithmException(enumDataStructor,testAlgorithmResult.getSortAlgorithmProcess());
+    }
+    private static void fillEnumSortProcessIfItIsNull(TestAlgorithmResult testAlgorithmResult){
+        if(testAlgorithmResult.getSortAlgorithmProcess()==null){
+            testAlgorithmResult.setSortAlgorithmProcess(EnumSortAlgorithm.NO_SORT);
+        }
     }
 
 
@@ -84,10 +92,9 @@ public class VisitorValues {
 //        if(EnumSortAlgorithm.SELECTION_SORT.equals(tes))
     }*/
 
-    public synchronized static BaseSearchAlgorithmComplexityCalculation getSearchAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) {
+    public synchronized static BaseSearchAlgorithmComplexityCalculation getSearchAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) throws InvalidSelectedSearchAlgorithmException {
 
         EnumSearchAlgorithm decidedEnumSearchAlgorithm = getRequestEnumSearchAlgorithm(enumDataStructor, testAlgorithmResult);
-
         switch (Objects.requireNonNull(decidedEnumSearchAlgorithm)) {
             case SEARCH_NODE:
                 return new SASearchNodeSearch(testAlgorithmResult);
@@ -120,7 +127,7 @@ public class VisitorValues {
 
     }
 
-    private static EnumSearchAlgorithm getRequestEnumSearchAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) {
+    private static EnumSearchAlgorithm getRequestEnumSearchAlgorithm(EnumDataStructor enumDataStructor, TestAlgorithmResult testAlgorithmResult) throws InvalidSelectedSearchAlgorithmException {
 
         List<EnumSearchAlgorithm> enumSearchAlgorithmList = availableAlgorithm.getAvailableEnumSearchAlgorithmListWithGivenDataStructor(enumDataStructor);
         for (EnumSearchAlgorithm tmp : enumSearchAlgorithmList) {
@@ -128,6 +135,6 @@ public class VisitorValues {
                 return tmp;
             }
         }
-        return null;
+        throw new InvalidSelectedSearchAlgorithmException(enumDataStructor,testAlgorithmResult.getSearchAlgorithmProcess());
     }
 }

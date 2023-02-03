@@ -11,8 +11,15 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>5.4.0</junit.version>
     </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>org.ahmeteminsaglik.searchnode</groupId>
+            <artifactId>SearchNode</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.ahmeteminsaglik</groupId>
             <artifactId>test-algorithm-result</artifactId>
@@ -47,6 +54,12 @@
             <groupId>org.ahmeteminsaglik</groupId>
             <artifactId>available-algorithm</artifactId>
             <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

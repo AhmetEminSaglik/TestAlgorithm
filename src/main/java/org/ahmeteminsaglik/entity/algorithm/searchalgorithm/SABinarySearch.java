@@ -2,27 +2,27 @@ package org.ahmeteminsaglik.entity.algorithm.searchalgorithm;
 
 import org.ahmeteminsaglik.API.business.abstracts.BaseSearchAlgorithmFunction;
 import org.ahmeteminsaglik.TestAlgorithmResult;
-import org.ahmeteminsaglik.entity.algorithm.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.abstracts.BaseSearchAlgorithmComplexityCalculation;
+import org.ahmeteminsaglik.entity.concrete.search.BinarySearch;
 import org.hibernate.cfg.NotYetImplementedException;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class SABinarySearch extends BaseSearchAlgorithmComplexityCalculation implements BaseSearchAlgorithmFunction {
     public SABinarySearch(TestAlgorithmResult testAlgorithmResult) {
         super(testAlgorithmResult);
-//        baseSearchAlgorithmFunction = new SearchNode();
+        baseSearchAlgorithmFunction = new BinarySearch();
     }
 
 
     @Override
     public boolean search(List<String> wordPoollist, String word) {
-        throw new NotYetImplementedException();
+        return baseSearchAlgorithmFunction.search(wordPoollist, word);
     }
 
     @Override
     public boolean search(String[] wordPoolArr, String word) {
-        throw new NotYetImplementedException();
+        return baseSearchAlgorithmFunction.search(wordPoolArr, word);
     }
 
     @Override
