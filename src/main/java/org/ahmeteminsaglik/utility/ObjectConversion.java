@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.utility;
 
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entity.Word;
 
 import java.util.ArrayList;
 import java.util.List;

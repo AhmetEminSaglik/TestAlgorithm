@@ -2,7 +2,7 @@ package org.ahmeteminsaglik.utility;
 
 import org.ahmeteminsaglik.API.abstracts.DBWordAPIService;
 import org.ahmeteminsaglik.API.concretes.DatabaseConnectionSN;
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entity.Word;
 import org.ahmeteminsaglik.enums.EnumWordTable;
 
 import java.util.List;
